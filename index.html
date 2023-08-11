@@ -7,23 +7,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Rock Paper Scissors Game</h1>
+  <h1 class="title">Rock Paper Scissors Game</h1>
   <div class="main">
     <div class="moves-container">
-      <div class="move-button">
+      <div class="move-button js-rock" onclick="playGame('rock')">
         <img src="images/rock.png" class="move-icon">
         <img class="shadow" src="images/shadow.png">
       </div>
-      <div class="move-button">
+      <div class="move-button js-paper">
         <img src="images/paper.png" class="move-icon">
         <img class="shadow" src="images/shadow.png">
       </div>
-      <div class="move-button">
+      <div class="move-button js-scissors">
         <img src="images/scissors.png" class="move-icon">
         <img src="images/shadow.png" class="shadow">
       </div>
     </div>
-    <div class="score-board"></div>
+    <div class="score-board">
+      You 0 : 0 Com
+    </div>
   </div>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
