@@ -1,0 +1,41 @@
+body {
+  background-color: #90c9bf;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  font-size: 3vw;
+  margin-bottom: 0;
+}
+
+.moves-container {
+  padding: 10px 40px;
+  max-width: 730px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  margin: 40px auto;
+}
+
+.move-icon {
+  width: 100%;
+  cursor: pointer;
+}
+.move-icon:hover {
+  width: 100.5%;
+}
+.shadow {
+  width: 100%;
+}
+
+.score-board {
+  border: 3px solid gray;
+  width: 160px;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 10px;
+  margin: 10px auto;
+}
