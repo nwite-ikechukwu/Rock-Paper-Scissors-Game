@@ -17,7 +17,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 30px;
   margin-top: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
 }
@@ -39,14 +39,20 @@ body {
   width: 100%;
 }
 
-.score-board {
-  border: 3px solid gray;
-  width: 160px;
+.score-board, .restart {
   font-size: 17px;
   font-weight: bold;
   text-align: center;
-  padding: 20px 10px;
-  margin: 10px auto;
+  background-color: blue;
+  padding: 15px 10px;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .result-board {
@@ -58,4 +64,16 @@ body {
 
 .no-pointer {
   cursor: auto;
+}
+
+.restart {
+  cursor: pointer;
+  background-color: green;
+  border-radius: 50px;
+}
+.hide-restart-button {
+  display: none;
+}
+.second-container {
+  padding: 0 20px;
 }
