@@ -70,6 +70,11 @@ body {
   cursor: pointer;
   background-color: green;
   border-radius: 50px;
+  transition: opacity 0.15s;
+}
+
+.restart:hover {
+  opacity: 0.8;
 }
 .hide-restart-button {
   display: none;

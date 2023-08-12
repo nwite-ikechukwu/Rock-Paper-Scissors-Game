@@ -16,9 +16,8 @@ const computerMove = generateComputerMove();
 let result = "";
 let score = JSON.parse(localStorage.getItem("score")) || {
   you: 0,
-  comp: 0,
+  com: 0,
 };
-let playCount = 0;
 const playerComputerMoves = document.querySelector(".js-container");
 const playerMoveDiv = document.querySelector(".js-rock");
 const computerMoveDiv = document.querySelector(".js-scissors");
@@ -102,22 +101,30 @@ function playGame(playerMove) {
     if (result === "You win") {
       score.you += 1;
     } else if (result === "You lose") {
-      score.comp += 1;
+      score.com += 1;
     }
     localStorage.setItem("score", JSON.stringify(score));
-  }
-
-  function resetScore() {
-    localStorage.removeItem('score');
   }
 
   scoreBoard.classList.add("score-board");
   restartButton.classList.add("restart");
   resetButton.classList.add("restart");
 
-  function showScore() {
-    scoreBoard.innerHTML = `You ${score.you} : ${score.comp} Com`;
-    restartButton.innerHTML = 'Play again';
-    resetButton.innerHTML = 'Reset score';
-  }
+}
+
+function showScore() {
+  scoreBoard.innerHTML = `You ${score.you} : ${score.com} Com`;
+  restartButton.innerHTML = 'Play again';
+  resetButton.innerHTML = 'Reset score';
+}
+
+function playAgain() {
+  location.reload(true);
+}
+
+function resetScore() {
+  score.you = 0;
+  score.com = 0;
+  localStorage.removeItem('score');
+  showScore();
 }
