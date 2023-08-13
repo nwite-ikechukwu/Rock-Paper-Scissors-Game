@@ -3,6 +3,7 @@ let score = JSON.parse(localStorage.getItem("score")) || {
   you: 0,
   com: 0,
 };
+
 function generateComputerMove() {
   const randomNumber = Math.random();
   let computerMove = "";
@@ -16,7 +17,6 @@ function generateComputerMove() {
   }
   return computerMove;
 }
-
 
 const playerComputerMoves = document.querySelector(".js-container");
 const playerMoveDiv = document.querySelector(".js-rock");
