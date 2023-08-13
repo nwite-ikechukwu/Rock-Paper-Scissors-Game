@@ -98,12 +98,12 @@ p {
 }
 
 @media (min-width: 800px) {
-  .footer .title{
+  .footer .title {
     font-size: 24px;
   }
 }
 @media (min-width: 800px) {
-  .footer .copyright{
+  .footer .copyright {
     font-size: 26px;
   }
 }
