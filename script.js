@@ -12,7 +12,6 @@ function generateComputerMove() {
   return computerMove;
 }
 
-const computerMove = generateComputerMove();
 let result = "";
 let score = JSON.parse(localStorage.getItem("score")) || {
   you: 0,
@@ -23,11 +22,11 @@ const playerMoveDiv = document.querySelector(".js-rock");
 const computerMoveDiv = document.querySelector(".js-scissors");
 const resultDiv = document.querySelector(".js-paper");
 const scoreBoard = document.querySelector(".js-score-board");
-let restartButton = document.querySelector('.js-restart');
-let resetButton = document.querySelector('.js-reset');
+let restartButton = document.querySelector(".js-restart");
+let resetButton = document.querySelector(".js-reset");
 
 function playGame(playerMove) {
-
+  const computerMove = generateComputerMove();
   function displayResult() {
     playerComputerMoves.innerHTML = `<div class="move-button">
     <img src="images/${playerMove}.png" class="move-icon no-pointer">
@@ -97,25 +96,24 @@ function playGame(playerMove) {
     }
   }
 
-  function updateScore() {
-    if (result === "You win") {
-      score.you += 1;
-    } else if (result === "You lose") {
-      score.com += 1;
-    }
-    localStorage.setItem("score", JSON.stringify(score));
-  }
-
   scoreBoard.classList.add("score-board");
   restartButton.classList.add("restart");
   resetButton.classList.add("restart");
+}
 
+function updateScore() {
+  if (result === "You win") {
+    score.you += 1;
+  } else if (result === "You lose") {
+    score.com += 1;
+  }
+  localStorage.setItem("score", JSON.stringify(score));
 }
 
 function showScore() {
   scoreBoard.innerHTML = `You ${score.you} : ${score.com} Com`;
-  restartButton.innerHTML = 'Play again';
-  resetButton.innerHTML = 'Reset score';
+  restartButton.innerHTML = "Play again";
+  resetButton.innerHTML = "Reset score";
 }
 
 function playAgain() {
@@ -125,6 +123,6 @@ function playAgain() {
 function resetScore() {
   score.you = 0;
   score.com = 0;
-  localStorage.removeItem('score');
+  localStorage.removeItem("score");
   showScore();
 }
